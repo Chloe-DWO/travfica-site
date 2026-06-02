@@ -1,27 +1,16 @@
-/* Fonts & base styles */
 body {
   margin: 0;
   font-family: 'Karla', sans-serif;
-  background-color: #fdfdfd;
+  background: #fdfdfd;
   color: #333;
   line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Cormorant Garamond', serif;
-  margin: 0 0 20px;
+  margin-bottom: 20px;
 }
 
-a {
-  text-decoration: none;
-  color: #575ECF;
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -39,11 +28,11 @@ header .logo {
 header nav a {
   margin: 0 15px;
   font-weight: 500;
+  color: #575ECF;
 }
 
-/* Hero section */
 .hero {
-  background: url('bedroom.jpg') center/cover no-repeat;
+  background: url('images/outside.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 120px 20px;
@@ -58,7 +47,6 @@ header nav a {
   margin: 20px auto;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   background: #575ECF;
@@ -73,19 +61,31 @@ header nav a {
   background: #3f46a8;
 }
 
-/* Booking section */
-.booking {
+.gallery {
+  padding: 60px 20px;
   text-align: center;
-  padding: 80px 20px;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.contact {
+  padding: 60px 20px;
+  text-align: center;
   background: #f5f5f5;
 }
 
-.booking h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
