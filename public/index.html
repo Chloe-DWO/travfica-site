@@ -3,48 +3,96 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Acacia Cottage — Cozy Garden Stay</title>
+  <title>TravelAfrica — Your Cozy Garden Stay in Africa</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Karla:wght@400;600&display=swap"/>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="logo">Acacia Cottage</div>
+    <div class="logo">TravelAfrica</div>
     <nav>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Welcome to Acacia Cottage</h1>
-    <p>A peaceful garden retreat in Gauteng — perfect for short stays, business trips, or weekend escapes.</p>
+    <h1>Welcome to TravelAfrica</h1>
+    <p>Your cozy garden stay in Africa — perfect for short stays, business trips, or weekend escapes.</p>
     <a href="#contact" class="btn">Get in Touch</a>
   </section>
 
+  <!-- Gallery -->
   <section id="gallery" class="gallery">
     <h2>Gallery</h2>
     <div class="grid">
-      <img src="images/outside.jpg" alt="Cottage exterior">
-      <img src="images/garden.jpg" alt="Garden view">
-      <img src="images/kitchen.jpg" alt="Kitchenette area">
-      <img src="images/kitchen 2.jpg" alt="Kitchen area">
-      <img src="images/bathroom.jpg" alt="Bathroom shower">
-      <img src="images/toilet.jpg" alt="Bathroom toilet">
-      <img src="images/clothes.jpg" alt="Interior clothes space">
+      <figure>
+        <img src="images/outside.jpg" alt="Cottage exterior">
+        <figcaption>Cottage exterior view</figcaption>
+      </figure>
+      <figure>
+        <img src="images/garden.jpg" alt="Garden view">
+        <figcaption>Peaceful garden</figcaption>
+      </figure>
+      <figure>
+        <img src="images/kitchen.jpg" alt="Kitchenette area">
+        <figcaption>Kitchenette</figcaption>
+      </figure>
+      <figure>
+        <img src="images/kitchen 2.jpg" alt="Kitchen area">
+        <figcaption>Modern kitchen</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bathroom.jpg" alt="Bathroom shower">
+        <figcaption>Bathroom shower</figcaption>
+      </figure>
+      <figure>
+        <img src="images/toilet.jpg" alt="Bathroom toilet">
+        <figcaption>Bathroom toilet</figcaption>
+      </figure>
+      <figure>
+        <img src="images/clothes.jpg" alt="Interior clothes space">
+        <figcaption>Wardrobe space</figcaption>
+      </figure>
+      <figure>
         <img src="images/bedroom.jpg" alt="Bedroom area">
+        <figcaption>Cozy bedroom</figcaption>
+      </figure>
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>📧 hello@acaciacottage.co.za</p>
-    <p>📱 WhatsApp: +27 00 000 0000</p>
+    <p>📧 hello@travelafrica.co.za</p>
+    <p>📱 WhatsApp: +27 81 242 1880</p>
     <p>📍 Gauteng, South Africa</p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    © 2026 Acacia Cottage · A quiet garden stay
+    © 2026 TravelAfrica · Your cozy garden stay in Africa
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
