@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Acacia Cottage — Cozy Garden Stay</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Karla:wght@300;400;500;600&display=swap"/>
+</head>
+<body>
+  <header>
+    <div class="logo">Acacia Cottage</div>
+    <nav>
+      <a href="#highlights">Stay</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#book" class="btn">Book Now</a>
+  </header>
+
+  <section class="hero">
+    <h1>A quiet garden cottage, made for slow mornings.</h1>
+    <p>Experience comfort, convenience, and unforgettable memories — whether you're here for business, a romantic getaway, or a weekend escape.</p>
+    <a href="#book" class="btn">Book Now</a>
+  </section>
+
+  <!-- Highlights, Gallery, Reviews, FAQ sections go here (you can keep Lovable’s HTML if you like) -->
+
+  <section id="book" class="booking">
+    <h2>Ready to unwind?</h2>
+    <p>Secure your dates today and experience the comfort guests keep coming back for.</p>
+
+    <!-- PayFast Sandbox Form -->
+    <form action="https://sandbox.payfast.co.za/eng/process" method="post">
+      <input type="hidden" name="merchant_id" value="10000100">
+      <input type="hidden" name="merchant_key" value="46f0cd694581a">
+      <input type="hidden" name="amount" value="1000.00">
+      <input type="hidden" name="item_name" value="Airbnb Booking">
+      <input type="hidden" name="return_url" value="https://your-vercel-site.vercel.app/success.html">
+      <input type="hidden" name="cancel_url" value="https://your-vercel-site.vercel.app/cancel.html">
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2026 Acacia Cottage · A quiet garden stay
+  </footer>
+</body>
+</html>
