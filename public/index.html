@@ -13,63 +13,80 @@
     <div class="logo">
       <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Where" />
-      <input type="text" placeholder="When" />
-      <input type="text" placeholder="Who" />
-      <button>🔍</button>
-    </div>
-    <div class="header-right">
-      <a href="#">Become a Host</a>
-      <span class="menu-icon">☰</span>
-    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="host.html">Become a Host</a>
+    </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <h1>Discover Cozy Stays Across South Africa</h1>
     <p>Find your perfect getaway — from garden cottages to modern studios.</p>
-    <a href="#rooms" class="btn">Explore Stays</a>
+    <a href="#featured" class="btn">Explore Stays</a>
   </section>
 
-  <!-- Featured Rooms -->
-  <section id="rooms" class="rooms">
+  <!-- Featured Stays -->
+  <section id="featured" class="rooms">
     <h2>Featured Stays</h2>
     <div class="room-grid">
-      <div class="room-card" onclick="showRoom('cottageonkei')">
+      <div class="room-card">
         <img src="images/Pendray15.jpg" alt="CottageOnKei">
         <h3>CottageOnKei</h3>
-        <p>Peaceful garden cottage for traveling couples.</p>
-        <a href="#cottageonkei" class="btn">View Details</a>
+        <p>Peaceful garden cottage for couples.</p>
+        <p class="price">R 1,800 / night</p>
+        <a href="room-cottageonkei.html" class="btn">View Details</a>
       </div>
-      <div class="room-card" onclick="showRoom('studioonkei')">
+      <div class="room-card">
         <img src="images/bedroom.jpg" alt="StudioOnKei">
         <h3>StudioOnKei</h3>
-        <p>Modern studio with all essentials.</p>
-        <a href="#studioonkei" class="btn">View Details</a>
+        <p>Modern studio with essentials.</p>
+        <p class="price">R 1,200 / night</p>
+        <a href="room-studioonkei.html" class="btn">View Details</a>
       </div>
     </div>
   </section>
 
-  <!-- CottageOnKei -->
-  <section id="cottageonkei" class="room-detail">
-    <h2>CottageOnKei</h2>
-    <p>A peaceful garden cottage — perfect for longer stays and family visits.</p>
-    <div class="detail-gallery">
-      <img src="images/Pendray14.jpg" alt="Garden View">
-      <img src="images/Pendray17.jpg" alt="Pool View">
-      <img src="images/Pendray2.jpg" alt="Bedroom">
+  <!-- Featured Activities -->
+  <section class="activities">
+    <h2>Featured Activities</h2>
+    <div class="activity-grid">
+      <div class="activity-card">
+        <img src="images/beach.jpg" alt="Beach Walks">
+        <h3>Beach Walks</h3>
+        <p>Relaxing strolls along pristine beaches.</p>
+      </div>
+      <div class="activity-card">
+        <img src="images/hiking.jpg" alt="Hiking Trails">
+        <h3>Hiking Trails</h3>
+        <p>Explore scenic routes and nature reserves.</p>
+      </div>
+      <div class="activity-card">
+        <img src="images/food.jpg" alt="Local Cuisine">
+        <h3>Local Cuisine</h3>
+        <p>Experience authentic South African flavors.</p>
+      </div>
     </div>
   </section>
 
-  <!-- StudioOnKei -->
-  <section id="studioonkei" class="room-detail">
-    <h2>StudioOnKei</h2>
-    <p>A modern studio with all essentials for a comfortable stay.</p>
-    <div class="detail-gallery">
-      <img src="images/kitchen.jpg" alt="Kitchen">
-      <img src="images/bathroom.jpg" alt="Bathroom">
-      <img src="images/garden.jpg" alt="Garden">
+  <!-- About Travfica -->
+  <section class="about">
+    <h2>About Travfica</h2>
+    <p>Travfica is your trusted platform for safe, smart travel. We connect travelers with verified hosts, cozy stays, and authentic experiences across South Africa.</p>
+    <div class="credibility">
+      <div>
+        <h3>⭐ Ratings</h3>
+        <p>Average 4.8 stars across all stays.</p>
+      </div>
+      <div>
+        <h3>🛡️ Safety</h3>
+        <p>Verified hosts and secure bookings.</p>
+      </div>
+      <div>
+        <h3>🤝 Trust</h3>
+        <p>Thousands of happy travelers.</p>
+      </div>
     </div>
   </section>
 
@@ -92,7 +109,7 @@
       </div>
       <div>
         <h4>Hosting</h4>
-        <a href="#">List Your Property</a>
+        <a href="host.html">List Your Property</a>
         <a href="#">Host Resources</a>
         <a href="#">Community Forum</a>
       </div>
@@ -107,7 +124,6 @@
       © 2026 Travfica · Travel Safe. Travel Smart.
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

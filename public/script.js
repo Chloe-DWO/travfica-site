@@ -1,15 +1,15 @@
-// Smooth scroll to room details
-function showRoom(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    window.scrollTo({ 
-      top: section.offsetTop - 60, 
-      behavior: 'smooth' 
-    });
-  }
-}
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 
-// Lightbox for gallery images
+// Lightbox for gallery images (activities, rooms, etc.)
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 lightbox.style.cssText = `
@@ -24,7 +24,7 @@ img.style.maxHeight = '80%';
 img.style.borderRadius = '8px';
 lightbox.appendChild(img);
 
-document.querySelectorAll('.room-detail img, .room-card img').forEach(image => {
+document.querySelectorAll('.room-card img, .detail-gallery img, .activity-card img').forEach(image => {
   image.addEventListener('click', () => {
     lightbox.style.display = 'flex';
     img.src = image.src;
@@ -35,3 +35,15 @@ document.querySelectorAll('.room-detail img, .room-card img').forEach(image => {
 lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
+
+// Optional: simple search bar interaction
+const searchBar = document.querySelector('.search-bar');
+if (searchBar) {
+  searchBar.querySelector('button').addEventListener('click', () => {
+    const where = searchBar.querySelector('input[placeholder="Where"]').value;
+    const when = searchBar.querySelector('input[placeholder="When"]').value;
+    const who = searchBar.querySelector('input[placeholder="Who"]').value;
+    alert(`Search requested:\nWhere: ${where}\nWhen: ${when}\nWho: ${who}`);
+    // Later, you can connect this to a backend or filter rooms dynamically
+  });
+}
