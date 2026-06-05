@@ -47,3 +47,15 @@ if (searchBar) {
     // Later, you can connect this to a backend or filter rooms dynamically
   });
 }
+
+// Host form confirmation popup
+const hostForm = document.querySelector('.host-form form');
+if (hostForm) {
+  hostForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // stop default mailto for now
+    alert("✅ Thank you for submitting your property!\nWe’ll review your request and contact you soon.");
+    hostForm.reset();
+    // If you want to still send via mailto, remove e.preventDefault()
+    // and keep the alert as a friendly confirmation.
+  });
+}

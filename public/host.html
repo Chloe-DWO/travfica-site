@@ -1,4 +1,3 @@
-<!-- host.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +7,11 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="logo"><img src="images/Travificalogo.jpg.png" alt="Travfica Logo"></div>
+    <div class="logo">
+      <a href="index.html"><img src="images/Travificalogo.jpg.png" alt="Travfica Logo"></a>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="rooms.html">Rooms</a>
@@ -17,26 +19,34 @@
     </nav>
   </header>
 
+  <!-- Host Form -->
   <section class="host-form">
     <h2>Become a Host</h2>
     <p>List your property on Travfica and reach thousands of travelers.</p>
     <form action="mailto:hello@travfica.com" method="post" enctype="text/plain">
-      <label>Full Name</label>
-      <input type="text" name="name" required>
-      <label>Email</label>
-      <input type="email" name="email" required>
-      <label>Property Name</label>
-      <input type="text" name="property" required>
-      <label>Location</label>
-      <input type="text" name="location" required>
-      <label>Price per Night (ZAR)</label>
-      <input type="number" name="price" required>
-      <label>Description</label>
-      <textarea name="description" rows="4" required></textarea>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="property">Property Name</label>
+      <input type="text" id="property" name="property" required>
+
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" required>
+
+      <label for="price">Price per Night (ZAR)</label>
+      <input type="number" id="price" name="price" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
       <button type="submit" class="btn">Submit Request</button>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-bottom">© 2026 Travfica · Travel Safe. Travel Smart.</div>
   </footer>
