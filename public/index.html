@@ -3,158 +3,111 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>TravelAfrica — Cozy Garden Stays</title>
+  <title>Travfica — Travel Safe. Travel Smart.</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Karla:wght@400;600&display=swap"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">TravelAfrica</div>
-    <nav>
-      <a href="#studioonkei">StudioOnKei</a>
-      <a href="#cottageonkei">CottageOnKei</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="logo">
+      <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Where" />
+      <input type="text" placeholder="When" />
+      <input type="text" placeholder="Who" />
+      <button>🔍</button>
+    </div>
+    <div class="header-right">
+      <a href="#">Become a Host</a>
+      <span class="menu-icon">☰</span>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Welcome to TravelAfrica</h1>
-    <p>Choose between two cozy stays — StudioOnKei or CottageOnKei — each with its own charm.</p>
-    <a href="#contact" class="btn">Get in Touch</a>
+    <h1>Discover Cozy Stays Across South Africa</h1>
+    <p>Find your perfect getaway — from garden cottages to modern studios.</p>
+    <a href="#rooms" class="btn">Explore Stays</a>
+  </section>
+
+  <!-- Featured Rooms -->
+  <section id="rooms" class="rooms">
+    <h2>Featured Stays</h2>
+    <div class="room-grid">
+      <div class="room-card" onclick="showRoom('cottageonkei')">
+        <img src="images/Pendray15.jpg" alt="CottageOnKei">
+        <h3>CottageOnKei</h3>
+        <p>Peaceful garden cottage for traveling couples.</p>
+        <a href="#cottageonkei" class="btn">View Details</a>
+      </div>
+      <div class="room-card" onclick="showRoom('studioonkei')">
+        <img src="images/bedroom.jpg" alt="StudioOnKei">
+        <h3>StudioOnKei</h3>
+        <p>Modern studio with all essentials.</p>
+        <a href="#studioonkei" class="btn">View Details</a>
+      </div>
+    </div>
   </section>
 
   <!-- CottageOnKei -->
-  <section id="cottageonkei" class="room">
+  <section id="cottageonkei" class="room-detail">
     <h2>CottageOnKei</h2>
     <p>A peaceful garden cottage — perfect for longer stays and family visits.</p>
-
-    <h3>Cottage Exterior</h3>
-    <div class="grid">
-      <figure>
-        <img src="images/Pendray15.jpg" alt="Cottage exterior">
-        <figcaption>Full View</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray16.jpg" alt="Cottage exterior 2">
-        <figcaption>Zoomed-in View</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray14.jpg" alt="Cottage garden">
-        <figcaption>Garden View</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray13.jpg" alt="Cottage garden 2">
-        <figcaption>Garden Full View</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray17.jpg" alt="Cottage Pool">
-        <figcaption>Pool View</figcaption>
-      </figure>
-    </div>
-
-    <h3>Cottage Interior</h3>
-    <div class="grid">
-      <figure>
-        <img src="images/Pendray2.jpg" alt="Cottage bedroom">
-        <figcaption>Cottage Bedroom</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray3.jpg" alt="Cottage bedroom 2">
-        <figcaption>Bedroom View 2</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray5.jpg" alt="Cottage dining area">
-        <figcaption>Dining Area</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray6.jpg" alt="Cottage living room">
-        <figcaption>Living Room</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray7.jpg" alt="Cottage living room 2">
-        <figcaption>Living Room Full View</figcaption>
-      </figure>
-      <figure>
-        <img src="images/Pendray1.jpg" alt="Cottage bathroom">
-        <figcaption>Cottage Bathroom</figcaption>
-      </figure>
+    <div class="detail-gallery">
+      <img src="images/Pendray14.jpg" alt="Garden View">
+      <img src="images/Pendray17.jpg" alt="Pool View">
+      <img src="images/Pendray2.jpg" alt="Bedroom">
     </div>
   </section>
-
 
   <!-- StudioOnKei -->
-  <section id="studioonkei" class="room">
+  <section id="studioonkei" class="room-detail">
     <h2>StudioOnKei</h2>
     <p>A modern studio with all essentials for a comfortable stay.</p>
-    <div class="grid">
-      <figure>
-        <img src="images/bedroom.jpg" alt="Studio Bedroom">
-        <figcaption>Studio Bedroom</figcaption>
-      </figure>
-      <figure>
-        <img src="images/kitchen.jpg" alt="Studio Kitchenette">
-        <figcaption>Studio Kitchenette</figcaption>
-      </figure>
-       <figure>
-        <img src="images/kitchen 2.jpg" alt="Studio Kitchenette other angle">
-        <figcaption>Studio Kitchenette 2</figcaption>
-      </figure>
-      <figure>
-        <img src="images/bathroom.jpg" alt="Studio Shower">
-        <figcaption>Studio Shower</figcaption>
-      </figure>
-      <figure>
-        <img src="images/toilet.jpg" alt="Studio Toilet">
-        <figcaption>Studio Toilet</figcaption>
-      </figure>
-      <figure>
-        <img src="images/clothes.jpg" alt="Studio Clothing Rack">
-        <figcaption>Studio Clothing Rack</figcaption>
-      </figure>
-      <figure>
-        <img src="images/garden.jpg" alt="Studio Garden">
-        <figcaption>Studio Garden</figcaption>
-      </figure>
-      <figure>
-        <img src="images/outside.jpg" alt="Studio Outside">
-        <figcaption>Studio Outside</figcaption>
-      </figure>
+    <div class="detail-gallery">
+      <img src="images/kitchen.jpg" alt="Kitchen">
+      <img src="images/bathroom.jpg" alt="Bathroom">
+      <img src="images/garden.jpg" alt="Garden">
     </div>
   </section>
 
-  
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>📧 hello@travelafrica.co.za</p>
-    <p>📱 WhatsApp: +27 81 242 1880</p>
+    <p>📧 hello@travfica.com</p>
+    <p>📱 WhatsApp: +27 82 292 7229</p>
     <p>📍 Gauteng, South Africa</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    © 2026 TravelAfrica · Your one stop for cozy night stays
+    <div class="footer-columns">
+      <div>
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Safety Information</a>
+        <a href="#">Cancellation Options</a>
+      </div>
+      <div>
+        <h4>Hosting</h4>
+        <a href="#">List Your Property</a>
+        <a href="#">Host Resources</a>
+        <a href="#">Community Forum</a>
+      </div>
+      <div>
+        <h4>Travfica</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Investors</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Travfica · Travel Safe. Travel Smart.
+    </div>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <img src="" alt="">
-  </div>
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    document.querySelectorAll('.room img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-      });
-    });
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
