@@ -7,17 +7,42 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <div class="logo">
-      <a href="index.html"><img src="images/Travificalogo.jpg.png" alt="Travfica Logo"></a>
+  <!-- Logo (clickable back to home) -->
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
+    </a>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="rooms.html">Accommodations ▾</a>
+      <div class="dropdown-content">
+        <a href="rooms.html#student">Student </a>
+        <a href="rooms.html#exclusive">Exclusive</a>
+      </div>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms</a>
-      <a href="host.html">Become a Host</a>
-    </nav>
-  </header>
+    <a href="host.html">Host</a>
+    <a href="partners.html">Partners</a>
+  </nav>
+
+  <!-- Hamburger Icon (mobile) -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="rooms.html#student">Student</a>
+    <a href="rooms.html#exclusive">Exclusive</a>
+    <a href="host.html">Host</a>
+    <a href="partners.html">Partners</a>
+  </div>
+</header>
 
   <!-- Host Form -->
   <section class="host-form">

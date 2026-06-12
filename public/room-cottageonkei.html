@@ -8,14 +8,40 @@
   <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
-  <header>
-    <div class="logo"><img src="../images/Travificalogo.jpg.png" alt="Travfica Logo"></div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../rooms.html">Rooms</a>
-      <a href="../host.html">Become a Host</a>
-    </nav>
-  </header>
+   <header>
+  <!-- Logo (clickable back to home) -->
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
+    </a>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="rooms.html">Accommodations ▾</a>
+      <div class="dropdown-content">
+        <a href="rooms.html#student">Student </a>
+        <a href="rooms.html#exclusive">Exclusive</a>
+      </div>
+    </div>
+    <a href="host.html">Host</a>
+    <a href="partners.html">Partners</a>
+  </nav>
+
+  <!-- Hamburger Icon (mobile) -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="rooms.html#student">Student</a>
+    <a href="rooms.html#exclusive">Exclusive</a>
+    <a href="host.html">Host</a>
+    <a href="partners.html">Partners</a>
+  </div>
+</header>
 
   <section class="room-detail">
     <h2>CottageOnKei</h2>
@@ -23,7 +49,7 @@
     <div class="detail-gallery">
       <img src="../images/Pendray14.jpg" alt="Garden View">
       <img src="../images/Pendray17.jpg" alt="Pool View">
-      <img src="../images/Pendray18.jpg" alt="Living Room">
+      <img src="../images/Pendray7.jpg" alt="Living Room">
     </div>
     <h3>Price: R 1,800 / night</h3>
     <h3>Contact Owner</h3>

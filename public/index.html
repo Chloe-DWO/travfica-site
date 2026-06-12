@@ -7,18 +7,47 @@
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
+
 <body>
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
+  <a href="index.html">
+    <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
+  </a>
+</div>
+
+<!-- Desktop Navigation -->
+   <nav class="nav-links">
+  <a href="index.html">Home</a>
+  <div class="dropdown">
+    <a href="rooms.html">Accommodations ▾</a>
+    <div class="dropdown-content">
+      <a href="rooms.html#student">Student</a>
+      <a href="rooms.html#exclusive">Exclusive</a>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms</a>
-      <a href="host.html">Become a Host</a>
-    </nav>
+  </div>
+  <a href="host.html">Host</a>
+  <a href="partners.html">Partners</a>
+</nav>
+
+
+<!-- Hamburger Menu icon -->
+ <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+
+  <!-- Mobile Navigation -->
+   <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="rooms.html#student">Student (Affordable)</a>
+    <a href="rooms.html#exclusive">Exclusive (Luxury)</a>
+    <a href="host.html">Become a Host</a>
+    <a href="partners.html">Partners</a>
+  </div>
   </header>
+
 
   <!-- Hero -->
   <section class="hero">
@@ -27,11 +56,19 @@
     <a href="#featured" class="btn">Explore Stays</a>
   </section>
 
+
+  <!-- Promotions -->
+
+  <section class="promo-banner">
+  <p>🔥 Kruger Trips 50% Discount — Limited Time Offer!</p>
+</section>
+
+
   <!-- Featured Stays -->
-  <section id="featured" class="rooms">
-    <h2>Featured Stays</h2>
-    <div class="room-grid">
-      <div class="room-card">
+   <section id="featured" class="rooms">
+  <h2>Featured Stays</h2>
+  <div class="scroll-container">
+        <div class="room-card">
         <img src="images/Pendray15.jpg" alt="CottageOnKei">
         <h3>CottageOnKei</h3>
         <p>Peaceful garden cottage for couples.</p>
@@ -41,6 +78,20 @@
       <div class="room-card">
         <img src="images/bedroom.jpg" alt="StudioOnKei">
         <h3>StudioOnKei</h3>
+        <p>Modern studio with essentials.</p>
+        <p class="price">R 1,200 / night</p>
+        <a href="room-studioonkei.html" class="btn">View Details</a>
+      </div>
+      <div class="room-card">
+        <img src="images/bedroom.jpg" alt="StudioOnKei">
+        <h3>Placeholder</h3>
+        <p>Modern studio with essentials.</p>
+        <p class="price">R 1,200 / night</p>
+        <a href="room-studioonkei.html" class="btn">View Details</a>
+      </div>
+      <div class="room-card">
+        <img src="images/bedroom.jpg" alt="StudioOnKei">
+        <h3>Placeholder 2</h3>
         <p>Modern studio with essentials.</p>
         <p class="price">R 1,200 / night</p>
         <a href="room-studioonkei.html" class="btn">View Details</a>

@@ -1,3 +1,6 @@
+/* =========================================================
+   🎨 GLOBAL VARIABLES & BASE STYLES
+========================================================= */
 :root {
   --primary: #1A1AFF;
   --secondary: #FF7A00;
@@ -12,7 +15,9 @@ body {
   color: var(--text);
 }
 
-/* Header */
+/* =========================================================
+   🧭 HEADER & NAVIGATION
+========================================================= */
 header {
   display: flex;
   justify-content: space-between;
@@ -26,49 +31,126 @@ header {
   height: 40px;
 }
 
-.search-bar {
-  display: flex;
+/* --- Navigation Links --- */
+nav a {
+  margin: 0 20px;
+  padding: 8px 12px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--secondary);
+  background: rgba(255, 122, 0, 0.1);
+}
+
+nav a.active {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* --- Dropdown Menu --- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
   background: #fff;
-  border-radius: 40px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1;
 }
 
-.search-bar input {
-  border: none;
-  padding: 12px 20px;
-  flex: 1;
-  font-size: 0.95rem;
+.dropdown-content a {
+  color: var(--primary);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease;
 }
 
-.search-bar button {
-  background: var(--secondary);
-  color: white;
-  border: none;
-  padding: 12px 20px;
+.dropdown-content a:hover {
+  background: var(--light);
+  color: var(--secondary);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* --- Hamburger Icon & Mobile Menu --- */
+.hamburger {
+  display: none;
+  font-size: 28px;
   cursor: pointer;
+  color: var(--primary);
 }
 
-.header-right a {
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.mobile-menu a {
+  padding: 12px 16px;
+  text-decoration: none;
   color: var(--primary);
   font-weight: 600;
-  margin-right: 15px;
-  text-decoration: none;
+  border-bottom: 1px solid #eee;
 }
 
-/* Hero */
+.mobile-menu a:hover {
+  background: var(--light);
+  color: var(--secondary);
+}
+
+/* --- Responsive Navigation --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* =========================================================
+   🌅 HERO SECTION
+========================================================= */
 .hero {
   background: url('images/Pendray2.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 140px 20px;
+  position: relative;
   animation: fadeIn 1.5s ease;
 }
+
+.hero h1, .hero p {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- Buttons --- */
 .btn {
   display: inline-block;
   background: var(--secondary);
@@ -83,16 +165,40 @@ header {
   background: #e56c00;
 }
 
-/* Rooms */
+/* --- Promo Banner --- */
+.promo-banner {
+  background: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 40px 0;
+  border-radius: 6px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+/* =========================================================
+   🏠 ROOMS & ROOM DETAILS
+========================================================= */
 .rooms {
   padding: 60px 40px;
   text-align: center;
 }
+
+/* --- Grid Layout --- */
 .room-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
+
+/* --- Room Cards --- */
 .room-card {
   background: white;
   border-radius: 12px;
@@ -117,7 +223,26 @@ header {
   color: #555;
 }
 
-/* Room Details */
+/* --- Horizontal Scroll (Landing Page) --- */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+.room-card {
+  flex: 0 0 280px;
+}
+
+/* --- Room Detail Page --- */
 .room-detail {
   padding: 60px 40px;
   text-align: center;
@@ -135,47 +260,9 @@ header {
   border-radius: 8px;
 }
 
-/* Contact */
-.contact {
-  background: var(--primary);
-  color: white;
-  padding: 60px 20px;
-  border-radius: 12px;
-  margin: 40px auto;
-  max-width: 600px;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  background: #fff;
-  padding: 40px;
-  border-top: 2px solid var(--primary);
-}
-.footer-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-footer h4 {
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-footer a {
-  display: block;
-  color: #555;
-  text-decoration: none;
-  margin-bottom: 6px;
-}
-footer a:hover {
-  color: var(--secondary);
-}
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #777;
-}
+/* =========================================================
+   🎯 ACTIVITIES & ABOUT
+========================================================= */
 .activities {
   padding: 60px 40px;
   text-align: center;
@@ -201,6 +288,7 @@ footer a:hover {
   margin: 15px;
 }
 
+/* --- About Section --- */
 .about {
   padding: 60px 40px;
   text-align: center;
@@ -219,19 +307,22 @@ footer a:hover {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Navigation spacing */
-nav a {
-  margin: 0 20px; /* more space between links */
-  font-weight: 600;
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: var(--secondary);
+/* =========================================================
+   💌 CONTACT SECTION
+========================================================= */
+.contact {
+  background: var(--primary);
+  color: white;
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
 }
 
-/* Host Form Styling */
+/* =========================================================
+   🧱 HOST FORM
+========================================================= */
 .host-form {
   max-width: 600px;
   margin: 60px auto;
@@ -241,22 +332,26 @@ nav a:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   text-align: left;
 }
+
 .host-form h2 {
   text-align: center;
   color: var(--primary);
   margin-bottom: 20px;
 }
+
 .host-form p {
   text-align: center;
   margin-bottom: 30px;
   color: #555;
 }
+
 .host-form label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--primary);
 }
+
 .host-form input,
 .host-form textarea {
   width: 100%;
@@ -266,11 +361,13 @@ nav a:hover {
   border-radius: 8px;
   font-size: 1rem;
 }
+
 .host-form input:focus,
 .host-form textarea:focus {
   border-color: var(--secondary);
   outline: none;
 }
+
 .host-form button {
   width: 100%;
   padding: 14px;
@@ -282,6 +379,45 @@ nav a:hover {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .host-form button:hover {
   background: #e56c00;
+}
+
+/* =========================================================
+   📜 FOOTER
+========================================================= */
+footer {
+  background: #fff;
+  padding: 40px;
+  border-top: 2px solid var(--primary);
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+footer h4 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+footer a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+footer a:hover {
+  color: var(--secondary);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #777;
 }

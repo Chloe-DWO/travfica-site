@@ -59,3 +59,8 @@ if (hostForm) {
     // and keep the alert as a friendly confirmation.
   });
 }
+// Mobile menu toggle
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
