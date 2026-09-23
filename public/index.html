@@ -29,23 +29,11 @@
 
    <nav class="nav-links"> 
 
-  <a href="index.html">Home</a> 
+  <a href="#">Adventures</a> 
 
-  <div class="dropdown"> 
+  <a href="#">Accommodations </a> 
 
-    <a href="#">Accommodations ▾</a> 
-
-    <div class="dropdown-content"> 
-
-      <a href="#">Student</a> 
-
-      <a href="#">Exclusive</a> 
-
-    </div> 
-
-  </div> 
-
-  <a href="#">Host</a> 
+  <a href="host.html">Host</a> 
 
   <a href="#">Partners</a> 
 
@@ -55,35 +43,32 @@
 
   
 
-<!-- Hamburger Menu icon --> 
+<!-- Hamburger Menu icon -->
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
+</div>
 
-<div class="hamburger" onclick="toggleMenu()"> 
+<!-- Mobile Navigation -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#">Adventures</a>
+    <a href="#">Accommodations</a>
+    <a href="host.html">Host</a>
+    <a href="#">Partners</a>
+</div>
 
-    ☰ 
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
 
-  </div> 
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
 
-  
-
-  
-
-  <!-- Mobile Navigation --> 
-
-   <div class="mobile-menu" id="mobileMenu"> 
-
-    <a href="index.html">Home</a> 
-
-    <a href="#">Student (Affordable)</a> 
-
-    <a href="#">Exclusive (Luxury)</a> 
-
-    <a href="#">Become a Host</a> 
-
-    <a href="#">Partners</a> 
-
-  </div> 
-
-  </header> 
+</header> 
 
   
 
@@ -109,15 +94,30 @@
 
   
 
-  <div class="discount-banner"> 
+<div class="discount-banner"> 
 
   <div class="ticker"> 
 
-    🔥 Kruger Trips 50% Discount — Limited Time Offer!       🔥 Kruger Trips 50% Discount — Limited Time Offer!      🔥 Kruger Trips 50% Discount — Limited Time Offer!     🔥 Kruger Trips 50% Discount — Limited Time Offer! 
+    🔥 Kruger Trips Offer!                🔥 Kruger Trips Offer!               🔥 Kruger Trips Offer!              🔥 Kruger Trips Offer! 
 
   </div> 
 
-</div> 
+</div>
+
+
+<style>
+  .logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding: 0 16px; }
+  .logos img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: contain; background: #fff; }
+</style>
+<div class="logos">
+  <img src="/public/images/buffalo.png" alt="buffalo logo" />
+  <img src="/public/images/cheetah.png" alt="cheetah logo" />
+  <img src="/public/images/lion.png" alt="lion logo" />
+  <img src="/public/images/elephant.png" alt="elephant logo" />
+  <img src="/public/images/wildebeast.png" alt="wildebeest logo" />
+</div>
+
+
 
   <section class="landing-rooms">
   <h2>Featured Stays</h2>
@@ -125,7 +125,7 @@
       <img src="images/bedroom.jpg" alt="Studio On Kei">
       <h3>Studio On Kei</h3>
       <p>Cozy studio with modern amenities.</p>
-      <div class="price">R850/night</div>
+      <div class="price">R650/night</div>
       <a href="room-studioonkei.html" class="btn">View Details</a>
     </div>
 <br/>
@@ -133,7 +133,7 @@
       <img src="images/Pendray2.jpg" alt="Cottage On Kei">
       <h3>Cottage On Kei</h3>
       <p>Charming cottage surrounded by nature.</p>
-      <div class="price">R1200/night</div>
+      <div class="price">R850/night</div>
       <a href="room-cottageonkei.html" class="btn">View Details</a>
     </div>
   </div>
@@ -369,24 +369,21 @@
 
     <div class="about-images">
       <div class="image-card">
-        <img src="images/cape town.jpeg" alt="Cape Town">
-        <span class="image-caption">Cape Town — Coastal Charm</span>
+        <img src="images/elephant safari.png" alt="Elephant Safari">
+        <span class="image-caption">Port Elizabeth — Addo Elephant Safari</span>
       </div>
     
   </div>
 
   <div class="credibility">
     <div>
-      <h3>⭐ Quality Stays</h3>
-      <p>Curated accommodations with verified hosts.</p>
+      <img src="images/pic1.png" alt="Elephant Safari1">
     </div>
     <div>
-      <h3>🌍 Local Connection</h3>
-      <p>Supporting communities and small businesses.</p>
+      <img src="images/pic2.png" alt="Elephant Safari2">
     </div>
     <div>
-      <h3>🤝 Recognition</h3>
-      <p>Celebrating travelers and hosts through stories and rewards.</p>
+      <img src="images/pic3.png" alt="Elephant Safari3">
     </div>
   </div>
 </section>
@@ -397,16 +394,11 @@
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <p><p>
-  Tell us about your trip — we’ll help you find the perfect stay and experience.
+  Let us help you find your trip! Write to us if you would like us to help you.
 </p></p>
 
   <div class="contact-container">
-    <!-- Image (Left) -->
-    <div class="contact-image">
-      <img src="images/beach.jpeg" alt="Travfica Journey">
-    </div>
-
-    <!-- Contact Form (Right) -->
+       <!-- Contact Form (Right) -->
     <form class="contact-form">
       <div class="form-row">
         <input type="text" placeholder="Your Full Name" required>
@@ -433,7 +425,7 @@
   <div class="contact-info">
     <div>
       <h3> WhatsApp</h3>
-      <p><a href="https://wa.me/27822927229">+27 xx xxx xxxx</a></p>
+      <p><a href="https://wa.me/27822927229">+27 71 115 1198</a></p>
     </div>
     
     <div>

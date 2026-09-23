@@ -300,6 +300,7 @@ header {
   animation-play-state: paused;
 }
 
+
 .trust-strip {
   display: flex;
   justify-content: space-between;
@@ -1602,6 +1603,7 @@ footer {
   background: #fff;
   padding: 40px;
   border-top: 2px solid var(--primary);
+  text-align: center;
 }
 
 .footer-columns {
