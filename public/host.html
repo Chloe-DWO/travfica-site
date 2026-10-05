@@ -17,40 +17,49 @@
     </a>
   </div>
 
-  <!-- Desktop Navigation -->
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a href="rooms.html">Accommodations ▾</a>
-      <div class="dropdown-content">
-        <a href="rooms.html#student">Student </a>
-        <a href="rooms.html#exclusive">Exclusive</a>
-      </div>
-    </div>
-    <a href="host.html">Host</a>
-    <a href="partners.html">Partners</a>
-  </nav>
+  <!-- Desktop Navigation --> 
 
-  <!-- Hamburger Icon (mobile) -->
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+   <nav class="nav-links"> 
 
-  <!-- Mobile Navigation -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="#">Adventures</a> 
 
-  <!-- Dropdown for Rooms -->
-  <div class="mobile-dropdown">
-    <button class="dropbtn">Accommodations ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="rooms.html#student">Student </a>
-      <a href="rooms.html#exclusive">Exclusive</a>
-    </div>
-  </div>
+  <a href="rooms.html">Accommodations </a> 
 
-  <a href="featuredactivities.html">Featured Activities</a>
-  <a href="host.html">Become a Host</a>
-  <a href="partners.html">Partners</a>
+  <a href="host.html">Host</a> 
+
+  <a href="#">Partners</a> 
+
+</nav> 
+
+  
+
+  
+
+<!-- Hamburger Menu icon -->
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
 </div>
+
+<!-- Mobile Navigation -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#">Adventures</a>
+    <a href="rooms.html">Accommodations</a>
+    <a href="host.html">Host</a>
+    <a href="#">Partners</a>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
+
 
 </header>
 

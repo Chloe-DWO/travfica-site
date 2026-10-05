@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Partners — Travfica</title>
-  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="./style1.css"/>
 </head>
 <body>
    <header>
@@ -16,44 +16,57 @@
     </a>
   </div>
 
-  <!-- Desktop Navigation -->
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a href="rooms.html">Accommodations ▾</a>
-      <div class="dropdown-content">
-        <a href="rooms.html#student">Student </a>
-        <a href="rooms.html#exclusive">Exclusive</a>
-      </div>
-    </div>
-    <a href="host.html">Host</a>
-    <a href="partners.html">Partners</a>
-  </nav>
+ <!-- Desktop Navigation --> 
 
-  <!-- Hamburger Icon (mobile) -->
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+   <nav class="nav-links"> 
 
-  <!-- Mobile Navigation -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="featuredactivities.html">Adventures</a> 
 
-  <!-- Dropdown for Rooms -->
-  <div class="mobile-dropdown">
-    <button class="dropbtn">Accommodations ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="rooms.html#student">Student </a>
-      <a href="rooms.html#exclusive">Exclusive</a>
-    </div>
-  </div>
+  <a href="rooms.html">Accommodations </a> 
 
-  <a href="featuredactivities.html">Featured Activities</a>
-  <a href="host.html">Become a Host</a>
-  <a href="partners.html">Partners</a>
+  <a href="host.html">Host</a> 
+
+  <a href="partners.html">Partners</a> 
+
+</nav> 
+
+  
+
+  
+
+<!-- Hamburger Menu icon -->
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
 </div>
 
+<!-- Mobile Navigation -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="featuredactivities.html">Adventures</a>
+    <a href="rooms.html">Accommodations</a>
+    <a href="host.html">Host</a>
+    <a href="partners.html">Partners</a>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+ </script>
 </header>
 
     <section class="partners">
         <h2>Our Partners</h2>
         <p>Coming soon!: Our trusted partners in experiences, tours, and local businesses.</p>
-        
+  <div class="logos">
+  <img src="images/buffalo.png" alt="buffalo logo" />
+  <img src="images/cheetah.png" alt="cheetah logo" />
+  <img src="images/lion.png" alt="lion logo" />
+  <img src="images/elephant.png" alt="elephant logo" />
+  <img src="images/wildebeast.png" alt="wildebeest logo" />
+</div>

@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Travfica | Rooms</title>
-  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="./style1.css"/>
 </head>
 
 <body>
@@ -17,38 +17,49 @@
     </a>
   </div>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
+ <!-- Desktop Navigation --> 
 
-    <div class="dropdown">
-      <a href="rooms.html">Accommodations ▾</a>
-      <div class="dropdown-content">
-        <a href="#student">Student</a>
-        <a href="#exclusive">Exclusive</a>
-      </div>
-    </div>
+   <nav class="nav-links"> 
 
+  <a href="#">Adventures</a> 
+
+  <a href="rooms.html">Accommodations </a> 
+
+  <a href="host.html">Host</a> 
+
+  <a href="#">Partners</a> 
+
+</nav> 
+
+  
+
+  
+
+<!-- Hamburger Menu icon -->
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
+</div>
+
+<!-- Mobile Navigation -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#">Adventures</a>
+    <a href="rooms.html">Accommodations</a>
     <a href="host.html">Host</a>
-    <a href="partners.html">Partners</a>
-  </nav>
+    <a href="#">Partners</a>
+</div>
 
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
 
-    <div class="mobile-dropdown">
-      <button class="dropbtn">Accommodations ▾</button>
-      <div class="mobile-dropdown-content">
-        <a href="#student">Student</a>
-        <a href="#exclusive">Exclusive</a>
-      </div>
-    </div>
-
-    <a href="featuredactivities.html">Featured Activities</a>
-    <a href="host.html">Become a Host</a>
-    <a href="partners.html">Partners</a>
-  </div>
 </header>
 
 
@@ -85,13 +96,28 @@
       <option>No</option>
     </select>
 
+    <select>
+      <option>Price Range</option>
+      <option>Under R700</option>
+      <option>R700 - R1,000</option>
+      <option>Over R1,000</option>
+    </select>
+
+    <select>
+      <option>City</option>
+      <option>Johannesburg</option>
+      <option>Cape Town</option>
+      <option>Port Elisabeth</option>
+      <option>Durban</option>
+      </select>
+
     <button class="btn">Apply Filters</button>
   </aside>
 
 
   <!-- Rooms -->
   <section class="rooms-content">
-    <h2>Our Rooms</h2>
+    <h2>Choose Your Stay</h2>
 
     <div class="rooms-grid">
 
@@ -101,7 +127,7 @@
         <div class="room-info">
           <h3>StudioOnKei</h3>
           <p>Modern studio with essentials.</p>
-          <p class="price">R 1,200 / night</p>
+          <p class="price">R 650 / night</p>
           <a href="room-studioonkei.html" class="btn">View</a>
         </div>
       </div>
@@ -112,7 +138,7 @@
         <div class="room-info">
           <h3>CottageOnKei</h3>
           <p>Peaceful family cottage.</p>
-          <p class="price">R 1,800 / night</p>
+          <p class="price">R 850 / night</p>
           <a href="room-cottageonkei.html" class="btn">View</a>
         </div>
       </div>

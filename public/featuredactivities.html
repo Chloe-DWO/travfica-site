@@ -271,23 +271,49 @@ header {
     <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
   </div>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
+  <!-- Desktop Navigation --> 
+
+   <nav class="nav-links"> 
+
+  <a href="featuredactivities.html">Adventures</a> 
+
+  <a href="rooms.html">Accommodations </a> 
+
+  <a href="host.html">Host</a> 
+
+  <a href="partners.html">Partners</a> 
+
+</nav> 
+
+  
+
+  
+
+<!-- Hamburger Menu icon -->
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
+</div>
+
+<!-- Mobile Navigation -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="featuredactivities.html">Adventures</a>
     <a href="rooms.html">Accommodations</a>
     <a href="host.html">Host</a>
     <a href="partners.html">Partners</a>
-  </nav>
-
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="rooms.html">Accommodations</a>
-  <a href="host.html">Host</a>
-  <a href="partners.html">Partners</a>
 </div>
 
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
+</header>
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
