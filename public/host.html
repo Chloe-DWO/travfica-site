@@ -21,7 +21,7 @@
 
    <nav class="nav-links"> 
 
-  <a href="#">Adventures</a> 
+  <a href="featuredactivities.html">Adventures</a> 
 
   <a href="rooms.html">Accommodations </a> 
 
@@ -42,10 +42,10 @@
 
 <!-- Mobile Navigation -->
 <div class="mobile-menu" id="mobileMenu">
-    <a href="#">Adventures</a>
+    <a href="featuredactivities.html">Adventures</a>
     <a href="rooms.html">Accommodations</a>
     <a href="host.html">Host</a>
-    <a href="#">Partners</a>
+    <a href="partners.html">Partners</a>
 </div>
 
 <script>
@@ -63,32 +63,78 @@ function toggleMenu() {
 
 </header>
 
-  <!-- Host Form -->
-  <section class="host-form">
-    <h2>Become a Host</h2>
-    <p>List your property on Travfica and reach thousands of travelers.</p>
-    <form action="mailto:hello@travfica.com" method="post" enctype="text/plain">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+<!-- Host Form -->
+<section class="host-form">
+  <h2>Become a Host</h2>
+  <p>List your property on Travfica and reach thousands of travelers.</p>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  <form id="hostForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
 
-      <label for="property">Property Name</label>
-      <input type="text" id="property" name="property" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="location">Location</label>
-      <input type="text" id="location" name="location" required>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+_ _  _ _ _  _ _ _ _" required>
 
-      <label for="price">Price per Night (ZAR)</label>
-      <input type="number" id="price" name="price" required>
+    <label for="property">Property Name</label>
+    <input type="text" id="property" name="property" required>
 
-      <label for="description">Description</label>
-      <textarea id="description" name="description" rows="4" required></textarea>
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" required>
 
-      <button type="submit" class="btn">Submit Request</button>
-    </form>
-  </section>
+    <label for="price">Price per Night (ZAR)</label>
+    <input type="number" id="price" name="price" required>
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="photos">Property Photos (up to 5)</label>
+    <input type="file" id="photos" name="photos" accept="image/*" multiple required>
+    <small class="file-hint">You can select up to 5 images (JPG or PNG).</small>
+    <div id="photoPreview" class="photo-preview"></div>
+    <p id="photoError" class="photo-error" style="display:none;">Please select a maximum of 5 photos.</p>
+
+    <button type="submit" class="btn">Submit Request</button>
+  </form>
+</section>
+
+<script>
+  const photoInput = document.getElementById('photos');
+  const preview = document.getElementById('photoPreview');
+  const error = document.getElementById('photoError');
+  const form = document.getElementById('hostForm');
+
+  photoInput.addEventListener('change', () => {
+    preview.innerHTML = '';
+    const files = Array.from(photoInput.files);
+
+    if (files.length > 5) {
+      error.style.display = 'block';
+      return;
+    }
+    error.style.display = 'none';
+
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    if (photoInput.files.length > 5) {
+      e.preventDefault();
+      error.style.display = 'block';
+      photoInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+</script>
 
   <!-- Footer -->
   <footer>

@@ -7,313 +7,366 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-   /* 🎨 COLOR SYSTEM */
-:root {
-  --primary-blue: #1e3a8a;
-  --accent-orange: #f97316;
-  --light-bg: #f7f9fc;
-  --white: #ffffff;
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
-}
+    /* 🎨 COLOR SYSTEM — matched to site brand colors */
+    :root {
+      --primary: #1A1AFF;
+      --secondary: #FF7A00;
+      --light-bg: #f7f9fc;
+      --white: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+    }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* GLOBAL */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--light-bg);
-  color: var(--text-dark);
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-dark);
+    }
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-.logo img {
-  height: 40px;
-}
+    .logo img {
+      height: 40px;
+    }
 
-/* NAV */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-dark);
-  font-weight: 500;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
 
-/* MOBILE MENU */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: white;
-  padding: 20px;
-}
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-.mobile-menu a {
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: var(--text-dark);
-}
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
 
-/* HERO */
-.hero {
-  background: url('./images/beach.jpeg') center/cover no-repeat;
-  height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  color: white;
-}
+    .mobile-menu a {
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
+    /* HERO */
+    .hero {
+      background: url('./images/beach.jpeg') center/cover no-repeat;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
 
-.hero h1 {
-  font-size: 2.5rem;
-}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
 
-/* FILTERS */
-.filters {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: -30px;
-}
+    .hero h1 {
+      font-size: 2.5rem;
+    }
 
-.filters input,
-.filters select {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
 
-/* GRID */
-.experiences-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
-}
+    /* FILTERS */
+    .filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: -30px;
+      position: relative;
+      z-index: 2;
+    }
 
-/* CARD */
-.card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-}
+    .filters input,
+    .filters select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: inherit;
+      background: white;
+    }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+    /* GRID */
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
 
-.card-content {
-  padding: 15px;
-}
+    /* CARD */
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.price {
-  color: var(--accent-orange);
-  font-weight: bold;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
 
-/* CTA */
-.cta {
-  text-align: center;
-  background: var(--primary-blue);
-  color: white;
-  padding: 50px;
-}
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-.cta button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  background: var(--accent-orange);
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-/* FEATURED SECTION */
-.featured {
-  padding: 60px 20px;
-}
+    .card-content {
+      padding: 15px;
+    }
 
-.featured h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    .card-content h3 {
+      margin-bottom: 6px;
+    }
 
-/* GRID */
-.featured-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-auto-rows: 200px;
-  gap: 15px;
-}
+    .card-content p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
 
-/* CARDS */
-.featured-card {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-}
+    .card-content > span {
+      display: inline-block;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      margin-right: 10px;
+    }
 
-.featured-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.3s ease;
-}
+    .price {
+      color: var(--secondary);
+      font-weight: bold;
+    }
 
-/* BIG CARD */
-.featured-card.large {
-  grid-row: span 2;
-}
+    .book-btn {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: var(--secondary);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-/* HOVER EFFECT */
-.featured-card:hover img {
-  transform: scale(1.08);
-}
+    .book-btn:hover {
+      background: #e56c00;
+    }
 
-/* OVERLAY (NOW ON ALL CARDS) */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  color: white;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
-}
+    /* CTA */
+    .cta {
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      padding: 50px;
+    }
 
-.overlay h3 {
-  font-size: 1.1rem;
-}
+    .cta button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: var(--secondary);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
-.overlay p {
-  font-size: 0.9rem;
-  color: var(--accent-orange);
-  font-weight: 500;
-}
+    .cta button:hover {
+      background: #e56c00;
+    }
 
+    /* FEATURED SECTION */
+    .featured {
+      padding: 60px 20px;
+    }
 
-/* 📱 RESPONSIVE */
-@media(max-width: 768px){
-  .nav-links {
-    display: none;
-  }
+    .featured h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-  .hamburger {
-    display: block;
-  }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-auto-rows: 200px;
+      gap: 15px;
+    }
 
-  .mobile-menu.show {
-    display: flex;
-  }
+    .featured-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+    }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
+    .featured-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s ease;
+    }
 
- .featured-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
-  }
+    .featured-card.large {
+      grid-row: span 2;
+    }
 
-  .featured-card.large {
-    grid-row: span 1;
-  } 
-}
+    .featured-card:hover img {
+      transform: scale(1.08);
+    }
 
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      color: white;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    }
+
+    .overlay h3 {
+      font-size: 1.1rem;
+    }
+
+    .overlay p {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    /* FOOTER (matches rest of site) */
+    footer {
+      background: #fff;
+      padding: 40px;
+      border-top: 2px solid var(--primary);
+      text-align: center;
+    }
+
+    .footer-bottom {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* 📱 RESPONSIVE */
+    @media(max-width: 768px){
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+      }
+
+      .featured-card.large {
+        grid-row: span 1;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
-  <div class="logo">
-    <a href = "index.html">
-    <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
-  </div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/Travificalogo.jpg.png" alt="Travfica Logo">
+      </a>
+    </div>
 
-  <!-- Desktop Navigation --> 
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
+      <a href="featuredactivities.html">Adventures</a>
+      <a href="rooms.html">Accommodations</a>
+      <a href="host.html">Host</a>
+      <a href="partners.html">Partners</a>
+    </nav>
 
-   <nav class="nav-links"> 
+    <!-- Hamburger Menu icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
 
-  <a href="featuredactivities.html">Adventures</a> 
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="featuredactivities.html">Adventures</a>
+      <a href="rooms.html">Accommodations</a>
+      <a href="host.html">Host</a>
+      <a href="partners.html">Partners</a>
+    </div>
 
-  <a href="rooms.html">Accommodations </a> 
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        if (menu.style.display === "flex") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "flex";
+        }
+      }
+    </script>
+  </header>
 
-  <a href="host.html">Host</a> 
-
-  <a href="partners.html">Partners</a> 
-
-</nav> 
-
-  
-
-  
-
-<!-- Hamburger Menu icon -->
-<div class="hamburger" onclick="toggleMenu()">
-    ☰
-</div>
-
-<!-- Mobile Navigation -->
-<div class="mobile-menu" id="mobileMenu">
-    <a href="featuredactivities.html">Adventures</a>
-    <a href="rooms.html">Accommodations</a>
-    <a href="host.html">Host</a>
-    <a href="partners.html">Partners</a>
-</div>
-
-<script>
-function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-
-    if (menu.style.display === "flex") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
-    }
-}
-</script>
-</header>
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
@@ -340,12 +393,12 @@ function toggleMenu() {
   </section>
 
   <!-- FEATURED -->
-<section class="featured">
+  <section class="featured">
     <h2>Top Experiences</h2>
 
     <div class="featured-grid">
       <div class="featured-card large">
-        <img src="images/safari.jpeg">
+        <img src="images/safari.jpeg" alt="Safari Adventure">
         <div class="overlay">
           <h3>Safari Adventure</h3>
           <p>From R1200</p>
@@ -353,11 +406,11 @@ function toggleMenu() {
       </div>
 
       <div class="featured-card">
-        <img src="images/beach.jpeg">
+        <img src="images/beach.jpeg" alt="Beach experience">
       </div>
 
       <div class="featured-card">
-        <img src="images/cape town.jpeg">
+        <img src="images/cape town.jpeg" alt="Cape Town experience">
       </div>
     </div>
   </section>
@@ -369,32 +422,35 @@ function toggleMenu() {
     <div class="experiences-grid">
 
       <div class="card">
-        <img src="images/beach.jpeg">
+        <img src="images/beach.jpeg" alt="Kayaking Tour">
         <div class="card-content">
           <h3>Kayaking Tour</h3>
           <p>Guided water adventure experience.</p>
           <span>Cape Town</span>
           <span class="price">R450</span>
+          <button class="book-btn">Book Now</button>
         </div>
       </div>
 
       <div class="card">
-        <img src="images/food.jpeg">
+        <img src="images/food.jpeg" alt="Food Tour">
         <div class="card-content">
           <h3>Food Tour</h3>
           <p>Try authentic local cuisine.</p>
           <span>Johannesburg</span>
           <span class="price">R300</span>
+          <button class="book-btn">Book Now</button>
         </div>
       </div>
 
       <div class="card">
-        <img src="images/cape town.jpeg">
+        <img src="images/cape town.jpeg" alt="Mountain Hiking">
         <div class="card-content">
           <h3>Mountain Hiking</h3>
           <p>Explore scenic nature trails.</p>
           <span>Durban</span>
           <span class="price">R200</span>
+          <button class="book-btn">Book Now</button>
         </div>
       </div>
 
@@ -407,6 +463,11 @@ function toggleMenu() {
     <p>We help you find safe and unforgettable experiences</p>
     <button>Get Started</button>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">© 2026 Travfica · Travel Safe. Travel Smart.</div>
+  </footer>
 
 </body>
 </html>
