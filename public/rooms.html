@@ -17,48 +17,30 @@
     </a>
   </div>
 
- <!-- Desktop Navigation --> 
+  <nav class="nav-links">
+    <a href="featuredactivities.html">Adventures</a>
+    <a href="rooms.html">Accommodations </a>
+    <a href="host.html">Host</a>
+    <a href="partners.html">Partners</a>
+  </nav>
 
-   <nav class="nav-links"> 
-
-  <a href="featuredactivities.html">Adventures</a> 
-
-  <a href="rooms.html">Accommodations </a> 
-
-  <a href="host.html">Host</a> 
-
-  <a href="partners.html">Partners</a> 
-
-</nav> 
-
-  
-
-  
-
-<!-- Hamburger Menu icon -->
-<div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger" onclick="toggleMenu()">
     ☰
-</div>
+  </div>
 
-<!-- Mobile Navigation -->
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#">Adventures</a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="featuredactivities.html">Adventures</a>
     <a href="rooms.html">Accommodations</a>
     <a href="host.html">Host</a>
-    <a href="#">Partners</a>
-</div>
+    <a href="partners.html">Partners</a>
+  </div>
 
-<script>
-function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-
-    if (menu.style.display === "flex") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
-}
-</script>
+  </script>
 
 </header>
 
@@ -69,49 +51,50 @@ function toggleMenu() {
   <aside class="filters-sidebar">
     <h3>Filter Rooms</h3>
 
-    <input type="text" placeholder="Search rooms...">
+    <input type="text" id="filterSearch" placeholder="Search rooms...">
 
-    <select>
-      <option>Beds</option>
-      <option>1 Bed</option>
-      <option>2 Beds</option>
-      <option>3+ Beds</option>
+    <select id="filterBeds">
+      <option value="">Beds</option>
+      <option value="1">1 Bed</option>
+      <option value="2">2 Beds</option>
+      <option value="3">3+ Beds</option>
     </select>
 
-    <select>
-      <option>Baths</option>
-      <option>1 Bath</option>
-      <option>2 Baths</option>
+    <select id="filterBaths">
+      <option value="">Baths</option>
+      <option value="1">1 Bath</option>
+      <option value="2">2 Baths</option>
     </select>
 
-    <select>
-      <option>Outdoor</option>
-      <option>Balcony</option>
-      <option>Garden</option>
+    <select id="filterOutdoor">
+      <option value="">Outdoor</option>
+      <option value="balcony">Balcony</option>
+      <option value="garden">Garden</option>
     </select>
 
-    <select>
-      <option>Pet Friendly</option>
-      <option>Yes</option>
-      <option>No</option>
+    <select id="filterPet">
+      <option value="">Pet Friendly</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
     </select>
 
-    <select>
-      <option>Price Range</option>
-      <option>Under R700</option>
-      <option>R700 - R1,000</option>
-      <option>Over R1,000</option>
+    <select id="filterPrice">
+      <option value="">Price Range</option>
+      <option value="under700">Under R700</option>
+      <option value="700to1000">R700 - R1,000</option>
+      <option value="over1000">Over R1,000</option>
     </select>
 
-    <select>
-      <option>City</option>
-      <option>Johannesburg</option>
-      <option>Cape Town</option>
-      <option>Port Elisabeth</option>
-      <option>Durban</option>
-      </select>
+    <select id="filterCity">
+      <option value="">City</option>
+      <option value="johannesburg">Johannesburg</option>
+      <option value="cape-town">Cape Town</option>
+      <option value="port-elizabeth">Port Elisabeth</option>
+      <option value="durban">Durban</option>
+    </select>
 
-    <button class="btn">Apply Filters</button>
+    <button class="btn" id="applyFilters">Apply Filters</button>
+    <button class="btn" id="resetFilters" type="button" style="background: var(--primary); margin-top: 10px;">Reset</button>
   </aside>
 
 
@@ -119,10 +102,21 @@ function toggleMenu() {
   <section class="rooms-content">
     <h2>Choose Your Stay</h2>
 
-    <div class="rooms-grid">
+    <p id="noResults" style="display:none; color:#777; text-align:center; margin-top:20px;">
+      No rooms match those filters. Try adjusting your search.
+    </p>
+
+    <div class="rooms-grid" id="roomsGrid">
 
       <!-- Room 1 -->
-      <div class="room-card">
+      <div class="room-card"
+           data-name="studioonkei modern studio"
+           data-beds="1"
+           data-baths="1"
+           data-outdoor=""
+           data-pet="no"
+           data-price="650"
+           data-city="johannesburg">
         <img src="images/bedroom.jpg">
         <div class="room-info">
           <h3>StudioOnKei</h3>
@@ -133,7 +127,14 @@ function toggleMenu() {
       </div>
 
       <!-- Room 2 -->
-      <div class="room-card">
+      <div class="room-card"
+           data-name="cottageonkei peaceful family cottage"
+           data-beds="1"
+           data-baths="1"
+           data-outdoor="garden"
+           data-pet="yes"
+           data-price="850"
+           data-city="johannesburg">
         <img src="images/Pendray15.jpg">
         <div class="room-info">
           <h3>CottageOnKei</h3>
@@ -144,7 +145,14 @@ function toggleMenu() {
       </div>
 
       <!-- NEW PLACEHOLDER ROOMS -->
-      <div class="room-card">
+      <div class="room-card"
+           data-name="beachside escape ocean views"
+           data-beds="2"
+           data-baths="2"
+           data-outdoor="balcony"
+           data-pet="no"
+           data-price="2200"
+           data-city="cape-town">
         <img src="images/bedroom.jpg">
         <div class="room-info">
           <h3>Beachside Escape</h3>
@@ -154,7 +162,14 @@ function toggleMenu() {
         </div>
       </div>
 
-      <div class="room-card">
+      <div class="room-card"
+           data-name="luxury villa spacious elegant"
+           data-beds="3"
+           data-baths="2"
+           data-outdoor="garden"
+           data-pet="no"
+           data-price="3500"
+           data-city="cape-town">
         <img src="images/Pendray15.jpg">
         <div class="room-info">
           <h3>Luxury Villa</h3>
@@ -164,7 +179,14 @@ function toggleMenu() {
         </div>
       </div>
 
-      <div class="room-card">
+      <div class="room-card"
+           data-name="city apartment business trips"
+           data-beds="1"
+           data-baths="1"
+           data-outdoor="balcony"
+           data-pet="no"
+           data-price="1400"
+           data-city="johannesburg">
         <img src="images/bedroom.jpg">
         <div class="room-info">
           <h3>City Apartment</h3>
@@ -174,7 +196,14 @@ function toggleMenu() {
         </div>
       </div>
 
-      <div class="room-card">
+      <div class="room-card"
+           data-name="garden retreat quiet relaxing"
+           data-beds="2"
+           data-baths="1"
+           data-outdoor="garden"
+           data-pet="yes"
+           data-price="1900"
+           data-city="durban">
         <img src="images/Pendray15.jpg">
         <div class="room-info">
           <h3>Garden Retreat</h3>
@@ -195,6 +224,79 @@ function toggleMenu() {
     © 2026 Travfica · Travel Safe. Travel Smart.
   </div>
 </footer>
+
+<script>
+  const applyBtn = document.getElementById('applyFilters');
+  const resetBtn = document.getElementById('resetFilters');
+  const cards = document.querySelectorAll('.room-card');
+  const noResults = document.getElementById('noResults');
+
+  function applyFilters() {
+    const search = document.getElementById('filterSearch').value.trim().toLowerCase();
+    const beds = document.getElementById('filterBeds').value;
+    const baths = document.getElementById('filterBaths').value;
+    const outdoor = document.getElementById('filterOutdoor').value;
+    const pet = document.getElementById('filterPet').value;
+    const price = document.getElementById('filterPrice').value;
+    const city = document.getElementById('filterCity').value;
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardName = card.dataset.name || '';
+      const cardBeds = card.dataset.beds || '';
+      const cardBaths = card.dataset.baths || '';
+      const cardOutdoor = card.dataset.outdoor || '';
+      const cardPet = card.dataset.pet || '';
+      const cardPrice = parseInt(card.dataset.price, 10) || 0;
+      const cardCity = card.dataset.city || '';
+
+      let match = true;
+
+      if (search && !cardName.includes(search)) match = false;
+
+      if (beds) {
+        if (beds === '3') {
+          if (parseInt(cardBeds, 10) < 3) match = false;
+        } else if (cardBeds !== beds) {
+          match = false;
+        }
+      }
+
+      if (baths && cardBaths !== baths) match = false;
+      if (outdoor && cardOutdoor !== outdoor) match = false;
+      if (pet && cardPet !== pet) match = false;
+      if (city && cardCity !== city) match = false;
+
+      if (price === 'under700' && cardPrice >= 700) match = false;
+      if (price === '700to1000' && (cardPrice < 700 || cardPrice > 1000)) match = false;
+      if (price === 'over1000' && cardPrice <= 1000) match = false;
+
+      card.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  function resetFilters() {
+    document.getElementById('filterSearch').value = '';
+    document.getElementById('filterBeds').selectedIndex = 0;
+    document.getElementById('filterBaths').selectedIndex = 0;
+    document.getElementById('filterOutdoor').selectedIndex = 0;
+    document.getElementById('filterPet').selectedIndex = 0;
+    document.getElementById('filterPrice').selectedIndex = 0;
+    document.getElementById('filterCity').selectedIndex = 0;
+    cards.forEach(card => card.style.display = '');
+    noResults.style.display = 'none';
+  }
+
+  applyBtn.addEventListener('click', applyFilters);
+  resetBtn.addEventListener('click', resetFilters);
+
+  // Optional: live search as you type, without needing "Apply"
+  document.getElementById('filterSearch').addEventListener('input', applyFilters);
+</script>
 
 </body>
 </html>
